@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style type="text/css">
+body {
+  background-color: rgb(10, 10, 10);
+  margin: 0px;
+  overflow: hidden;
+}
+
+nav {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20vh;
+  padding: clamp(1rem, 5vw, 6rem);
+}
+
+nav > a {
+  color: rgba(255, 255, 255, 0.25);
+  font-family: "Open Sans", sans-serif;
+  font-size: clamp(3rem, 8vw, 10rem);
+  font-weight: 300;
+  text-decoration: none;
+  position: relative;
+}
+
+nav > a:hover {
+  color: white;
+}
+
+nav > a > span {
+  display: block;
+  border-bottom: 1px solid transparent;
+  border-top: 1px solid transparent;
+  position: relative;
+  z-index: 2;
+}
+
+nav > a:hover > span {  
+  border-top-color: white;
+  border-bottom-color: white;
+  cursor: none;
+}
+
+nav > a > h2 {
+  position: absolute;
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0.5);
+  transition: transform 250ms, opacity 250ms;
+  pointer-events: none;
+  width: min(40vw, 500px);
+  z-index: 3;
+}
+
+nav > a:hover > h2 {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+h2{
+  text-transform:uppercase;
+}
+
+
+h2.t1{
+  font-size: 100px;
+  color: #F0B63B  ;
+}
+
+h2.t2{
+  font-size: 100px;
+  color: #DE27AA  
+}
+
+h2.t3{
+  font-size: 100px;
+  color: #EBC675  
+}
+
+h2.t4{
+  font-size: 100px;
+  color: #C8A4CE  
+}
+
+h2.t5{
+  font-size: 100px;
+  color: #CCFB1E   
+}
+
+h2.t6{
+  font-size: 100px;
+  color: #E4044A  
+}
+
+h2.t7{
+  font-size: 100px;
+  color: #9CE2F5  
+}
+
+h2.t8{
+  font-size: 100px;
+  color: #2B43C2  
+}
+</style>
+</head>
+<body>
+
+<div>
+<nav id="nav">
+  <a href="#">
+    <span>Span1</span>
+    <h2 class="t1">Test 1</h2>
+  </a>
+  <a href="#">
+    <span>Span2</span>
+    <h2 class="t2">TEST 2</h2>
+  </a>
+  <a href="#">
+    <span>Span3</span>
+    <h2 class="t3">TEST 3</h2>
+  </a>
+  <a href="#">
+    <span>Span4</span>
+    <h2 class="t4">TEST 4</h2>
+  </a>
+  <a href="#">
+    <span>Span5</span>
+    <h2 class="t5">TEST 5</h2>
+  </a>
+  <a href="#">
+    <span>Span6</span>
+    <h2 class="t6">TEST 6</h2>
+  </a>
+  <a href="#">
+    <span>Span7</span>
+    <h2 class="t7">TEST 7</h2>
+  </a>
+  <a href="#">
+    <span>Span8</span>
+    <h2  class="t8">TEST 8</h2>
+  </a>
+</nav>
+</div>
+
+</body>
+
+<script type="text/javascript">
+const nav = document.getElementById("nav");
+
+for(const link of nav.getElementsByTagName("a")) {  
+  link.onmousemove = e => {
+    const rect = link.getBoundingClientRect(),    
+          h2 = link.querySelector("h2");
+    
+    h2.style.left = `${e.clientX - rect.left}px`;
+    h2.style.top = `${e.clientY - rect.top}px`;
+  }
+}
+
+window.onmousemove = e => {
+  const percent = e.clientY / window.innerHeight;
+  
+  nav.animate({
+    transform: `translateY(${percent * nav.offsetHeight * -1}px)`
+  }, {
+    fill: "forwards",
+    duration: 0
+  })
+}
+</script>
+
+</html>

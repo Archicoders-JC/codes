@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style type="text/css">
+
+.flip-box-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 400ms;
+  transform-style: preserve-3d;
+  border: 0px solid;
+  border-radius: 20px;
+}
+
+.flip-box:hover .flip-box-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-box-front, .flip-box-back-1, .flip-box-back-2, .flip-box-back-3, .flip-box-back-4, .flip-box-back-5, .flip-box-back-6, .flip-box-back-7, .flip-box-back-8, .flip-box-back-9, .flip-box-back-10, .flip-box-back-11, .flip-box-back-12, .flip-box-back-13, .flip-box-back-14, .flip-box-back-15, .flip-box-back-16, .flip-box-back-17 {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+.flip-box-front {
+  background-color: #bbb;
+  color: black;
+  box-shadow: rgba(0,0,0,0.35) 1px 1px 5px;
+  border-radius: 20px;
+}
+
+.flip-box-back-1 {
+  background-color: #E5243A;
+  transform: rotateY(180deg);
+  box-shadow: rgba(0,0,0,0.35) 1px 1px 5px;
+  border-radius: 20px;
+}
+.flip-box-back-2 {
+  background-color: #DDA83A;
+  transform: rotateY(180deg);
+  box-shadow: rgba(0,0,0,0.35) 1px 1px 5px;
+  border-radius: 20px;
+}
+.flip-box-back-3 {
+  background-color: #4C9F38;
+  transform: rotateY(180deg);
+  box-shadow: rgba(0,0,0,0.35) 1px 1px 5px;
+  border-radius: 20px;
+}
+.flip-box-back-4 {
+  background-color: #C51A2D;
+  transform: rotateY(180deg);
+  box-shadow: rgba(0,0,0,0.35) 1px 1px 5px;
+  border-radius: 20px;
+}
+.flip-box-back-5 {
+  background-color: #FF3A21;
+  transform: rotateY(180deg);
+  box-shadow: rgba(0,0,0,0.35) 1px 1px 5px;
+  border-radius: 20px;
+}
+.flip-box-back-6 {
+  background-color: #26BDE3;
+  transform: rotateY(180deg);
+  box-shadow: rgba(0,0,0,0.35) 1px 1px 5px;
+  border-radius: 20px;
+}
+.flip-box-back-7 {
+  background-color: #FCC30B;
+  transform: rotateY(180deg);
+  box-shadow: rgba(0,0,0,0.35) 1px 1px 5px;
+  border-radius: 20px;
+}
+.flip-box-back-8 {
+  background-color: #A21943;
+  transform: rotateY(180deg);
+  box-shadow: rgba(0,0,0,0.35) 1px 1px 5px;
+  border-radius: 20px;
+}
+.flip-box-back-9 {
+  background-color: #FE6A25;
+  transform: rotateY(180deg);
+  box-shadow: rgba(0,0,0,0.35) 1px 1px 5px;
+  border-radius: 20px;
+}
+.flip-box-back-10 {
+  background-color: #DD1267;
+  transform: rotateY(180deg);
+  box-shadow: rgba(0,0,0,0.35) 1px 1px 5px;
+  border-radius: 20px;
+}
+.flip-box-back-11 {
+  background-color: #FE9E23;
+  transform: rotateY(180deg);
+  box-shadow: rgba(0,0,0,0.35) 1px 1px 5px;
+  border-radius: 20px;
+}
+.flip-box-back-12 {
+  background-color: #BF8C2E;
+  transform: rotateY(180deg);
+  box-shadow: rgba(0,0,0,0.35) 1px 1px 5px;
+  border-radius: 20px;
+}
+.flip-box-back-13 {
+  background-color: #3F7D44;
+  transform: rotateY(180deg);
+  box-shadow: rgba(0,0,0,0.35) 1px 1px 5px;
+  border-radius: 20px;
+}
+.flip-box-back-14 {
+  background-color: #0A97D9;
+  transform: rotateY(180deg);
+  box-shadow: rgba(0,0,0,0.35) 1px 1px 5px;
+  border-radius: 20px;
+}
+.flip-box-back-15 {
+  background-color: #56C02A;
+  transform: rotateY(180deg);
+  box-shadow: rgba(0,0,0,0.35) 1px 1px 5px;
+  border-radius: 20px;
+}
+.flip-box-back-16 {
+  background-color: #00699E;
+  transform: rotateY(180deg);
+  box-shadow: rgba(0,0,0,0.35) 1px 1px 5px;
+  border-radius: 20px;
+}
+.flip-box-back-17 {
+  background-color: #19486A;
+  transform: rotateY(180deg);
+  box-shadow: rgba(0,0,0,0.35) 1px 1px 5px;
+  border-radius: 20px;
+}
+
+
+.flip-box-back img{
+  width:100%;
+  height:100%;
+  border-radius: 20px;
+}
+.flip-box-front img{
+  width:100%;
+  height:100%;
+  border-radius: 20px;
+}
+
+
+
+.btn:hover{
+color: #365B5D;
+background-color: #fff;
+}
+
+
+
+@media (max-width: 767px) {
+  .flip-box {
+  background-color: transparent;
+  width: 95px;
+  height: 95px;
+  float:left;
+  margin: 5px 5px;
+}
+  
+  .btn{
+ position: absolute;
+  top: 50%;
+  left: 50%;
+    padding: 2px 10px;
+color: #fff;
+  transform: translate(-50%, -50%);
+background-color: #365B5D;
+    font: normal normal bold 10px arial;
+border: 0px solid #000000;
+  text-align: center;
+  transition :all 500ms;
+    cursor:pointer;
+}
+}
+
+@media (min-width: 768px) {
+  .flip-box {
+  background-color: transparent;
+  width: 160px;
+  height: 160px;
+  float:left;
+  margin: 10px 10px;
+}
+  
+  .btn{
+ position: absolute;
+  top: 50%;
+  left: 50%;
+    padding: 10px 24px;
+color: #fff;
+  transform: translate(-50%, -50%);
+background-color: #365B5D;
+    font: normal normal bold 16px arial;
+border: 0px solid #000000;
+  text-align: center;
+  transition :all 500ms;
+    cursor:pointer;
+}
+}
+
+@media (min-width: 992px) {
+  .flip-box {
+  background-color: transparent;
+  width: 160px;
+  height: 160px;
+  float:left;
+  margin: 10px 10px;
+}
+  
+  .btn{
+ position: absolute;
+  top: 50%;
+  left: 50%;
+    padding: 10px 24px;
+color: #fff;
+  transform: translate(-50%, -50%);
+background-color: #365B5D;
+    font: normal normal bold 16px arial;
+border: 0px solid #000000;
+  text-align: center;
+  transition :all 500ms;
+    cursor:pointer;
+}
+}
+</style>
+</head>
+<body>
+
+<div class="flip-box">
+  <div class="flip-box-inner">
+    <div class="flip-box-front">
+                   <img src="https://unified.law/wp-content/uploads/2022/08/E_WEB_INVERTED_01-300x300.png">
+    </div>
+    <div class="flip-box-back-1">
+      <a class='btn' href="https://www.un.org/sustainabledevelopment/wp-content/uploads/2020/10/Goal-1.zip">Download Goal 1</a>       
+    </div>
+  </div>
+</div>
+
+<div class="flip-box">
+  <div class="flip-box-inner">
+    <div class="flip-box-front">
+                   <img src="https://unified.law/wp-content/uploads/2022/08/E_WEB_INVERTED_02.png">
+    </div>
+    <div class="flip-box-back-2">
+      <a class='btn' href="https://www.un.org/sustainabledevelopment/wp-content/uploads/2020/10/Goal-2.zip">Download Goal 2</a>       
+    </div>
+  </div>
+</div>
+
+<div class="flip-box">
+  <div class="flip-box-inner">
+    <div class="flip-box-front">
+                   <img src="https://unified.law/wp-content/uploads/2022/08/E_WEB_INVERTED_03.png">
+    </div>
+    <div class="flip-box-back-3">
+      <a class='btn' href="https://www.un.org/sustainabledevelopment/wp-content/uploads/2020/10/Goal-3.zip">Download Goal 3</a>       
+    </div>
+  </div>
+</div>
+
+<div class="flip-box">
+  <div class="flip-box-inner">
+    <div class="flip-box-front">
+                   <img src="https://unified.law/wp-content/uploads/2022/08/E_WEB_INVERTED_04.png">
+    </div>
+    <div class="flip-box-back-4">
+      <a class='btn' href="https://www.un.org/sustainabledevelopment/wp-content/uploads/2020/10/Goal-4.zip">Download Goal 4</a>    
+    </div>
+  </div>
+</div>
+
+<div class="flip-box">
+  <div class="flip-box-inner">
+    <div class="flip-box-front">
+                   <img src="https://unified.law/wp-content/uploads/2022/08/E_WEB_INVERTED_05.png">
+    </div>
+    <div class="flip-box-back-5">
+      <a class='btn' href="https://www.un.org/sustainabledevelopment/wp-content/uploads/2020/10/Goal-5.zip">Download Goal 5</a>      
+    </div>
+  </div>
+</div>
+
+<div class="flip-box">
+  <div class="flip-box-inner">
+    <div class="flip-box-front">
+                   <img src="https://unified.law/wp-content/uploads/2022/08/E_WEB_INVERTED_06.png">
+    </div>
+    <div class="flip-box-back-6">
+      <a class='btn' href="https://www.un.org/sustainabledevelopment/wp-content/uploads/2020/10/Goal-6.zip">Download Goal 6</a>      
+    </div>
+  </div>
+</div>
+
+<div class="flip-box">
+  <div class="flip-box-inner">
+    <div class="flip-box-front">
+                   <img src="https://unified.law/wp-content/uploads/2022/08/E_WEB_INVERTED_07.png">
+    </div>
+    <div class="flip-box-back-7">
+      <a class='btn' href="https://www.un.org/sustainabledevelopment/wp-content/uploads/2020/10/Goal-7.zip">Download Goal 7</a>      
+    </div>
+  </div>
+</div>
+
+<div class="flip-box">
+  <div class="flip-box-inner">
+    <div class="flip-box-front">
+                   <img src="https://unified.law/wp-content/uploads/2022/08/E_WEB_INVERTED_08.png">
+    </div>
+    <div class="flip-box-back-8">
+      <a class='btn' href="https://www.un.org/sustainabledevelopment/wp-content/uploads/2020/10/Goal-8.zip">Download Goal 8</a>       
+    </div>
+  </div>
+</div>
+
+<div class="flip-box">
+  <div class="flip-box-inner">
+    <div class="flip-box-front">
+                   <img src="https://unified.law/wp-content/uploads/2022/08/E_WEB_INVERTED_09.png">
+    </div>
+    <div class="flip-box-back-9">
+      <a class='btn' href="https://www.un.org/sustainabledevelopment/wp-content/uploads/2020/10/Goal-9.zip">Download Goal 9</a>       
+    </div>
+  </div>
+</div>
+
+<div class="flip-box">
+  <div class="flip-box-inner">
+    <div class="flip-box-front">
+                   <img src="https://unified.law/wp-content/uploads/2022/08/E_WEB_INVERTED_10.png">
+    </div>
+    <div class="flip-box-back-10">
+      <a class='btn' href="https://www.un.org/sustainabledevelopment/wp-content/uploads/2020/10/Goal-10.zip">Download Goal 10</a>       
+    </div>
+  </div>
+</div>
+
+<div class="flip-box">
+  <div class="flip-box-inner">
+    <div class="flip-box-front">
+                   <img src="https://unified.law/wp-content/uploads/2022/08/E_WEB_INVERTED_11.png">
+    </div>
+    <div class="flip-box-back-11">
+      <a class='btn' href="https://www.un.org/sustainabledevelopment/wp-content/uploads/2020/10/Goal-11.zip">Download Goal 11</a>
+    </div>
+  </div>
+</div>
+
+<div class="flip-box">
+  <div class="flip-box-inner">
+    <div class="flip-box-front">
+                   <img src="https://unified.law/wp-content/uploads/2022/08/E_WEB_INVERTED_12.png">
+    </div>
+    <div class="flip-box-back-12">
+      <a class='btn' href="https://www.un.org/sustainabledevelopment/wp-content/uploads/2020/10/Goal-12.zip">Download Goal 12</a>
+    </div>
+  </div>
+</div>
+
+<div class="flip-box">
+  <div class="flip-box-inner">
+    <div class="flip-box-front">
+                   <img src="https://unified.law/wp-content/uploads/2022/08/E_WEB_INVERTED_13.png">
+    </div>
+    <div class="flip-box-back-13">
+      <a class='btn' href="https://www.un.org/sustainabledevelopment/wp-content/uploads/2020/10/Goal-13.zip">Download Goal 13</a>
+    </div>
+  </div>
+</div>
+
+<div class="flip-box">
+  <div class="flip-box-inner">
+    <div class="flip-box-front">
+                   <img src="https://unified.law/wp-content/uploads/2022/08/E_WEB_INVERTED_14.png">
+    </div>
+    <div class="flip-box-back-14">
+      <a class='btn' href="https://www.un.org/sustainabledevelopment/wp-content/uploads/2020/10/Goal-14.zip">Download Goal 14</a>
+    </div>
+  </div>
+</div>
+
+<div class="flip-box">
+  <div class="flip-box-inner">
+    <div class="flip-box-front">
+                   <img src="https://unified.law/wp-content/uploads/2022/08/E_WEB_INVERTED_15.png">
+    </div>
+    <div class="flip-box-back-15">
+      <a class='btn' href="https://www.un.org/sustainabledevelopment/wp-content/uploads/2020/10/Goal-15.zip">Download Goal 15</a>
+    </div>
+  </div>
+</div>
+
+<div class="flip-box">
+  <div class="flip-box-inner">
+    <div class="flip-box-front">
+                   <img src="https://unified.law/wp-content/uploads/2022/08/E_WEB_INVERTED_16.png">
+    </div>
+    <div class="flip-box-back-16">
+      <a class='btn' href="https://www.un.org/sustainabledevelopment/wp-content/uploads/2020/10/Goal-16.zip">Download Goal 16</a>
+    </div>
+  </div>
+</div>
+
+<div class="flip-box">
+  <div class="flip-box-inner">
+    <div class="flip-box-front">
+                   <img src="https://unified.law/wp-content/uploads/2022/08/E_WEB_INVERTED_17.png">
+    </div>
+    <div class="flip-box-back-17">
+      <a class='btn' href="https://www.un.org/sustainabledevelopment/wp-content/uploads/2020/10/Goal-17.zip">Download Goal 17</a>
+    </div>
+  </div>
+</div>
+
+</body>
+
+<script type="text/javascript">
+  list_box =  document.querySelectorAll('.flip-box')
+const divyArray = Array.from(list_box)
+  Array.from(list_box).forEach(function(element,i) {
+    element.addEventListener('mouseover', function(e) {
+      element.children[0].style.transform='rotateY(180deg)'
+    })
+    element.addEventListener('mouseout', function(e) {
+      element.children[0].style.transform='rotateY(0deg)'
+    })
+})
+window.addEventListener('scroll', function(e) {
+  Array.from(list_box).forEach(function(element,i) {
+    
+      t=window.scrollY;
+     t1=element.offsetTop;
+
+ d=element.offsetTop+element.offsetHeight/2
+
+    console.log(element.children[0].children[0]) ;
+    if((t>=t1-element.offsetHeight)&&(t<=t1))
+      {      element.children[0].style.transform='rotateY(180deg)'
+     
+       
+       // element.style.width='500px'
+      }
+    else {
+       element.children[0].style.transform='rotateY(-180deg)' 
+    }
+    
+
+})
+});
+  
+</script>
+</html>
